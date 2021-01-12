@@ -1,3 +1,5 @@
+# 시간초과
+
 case = int(input())
 
 
