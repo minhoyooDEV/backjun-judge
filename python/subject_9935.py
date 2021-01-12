@@ -1,6 +1,5 @@
 s = list(input())
 text = input()
-text_l = list(text)
 
 stack = []
 
