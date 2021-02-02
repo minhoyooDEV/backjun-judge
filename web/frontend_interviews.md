@@ -12,3 +12,6 @@ https://github.com/yangshun/front-end-interview-handbook/blob/master/contents/kr
 
 ## JAVASCRIPT
 https://github.com/yangshun/front-end-interview-handbook/blob/master/contents/kr/javascript-questions.md
+
+### Closuers
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures
