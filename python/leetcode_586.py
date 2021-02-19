@@ -36,6 +36,8 @@ print(Solution.kWeakestRows([[1, 0, 0, 0],
 
 
 
+
+
 print(Solution.kWeakestRows([[1, 1, 1, 1, 1, 1],
                              [1, 1, 1, 1, 1, 1],
                              [1, 1, 1, 1, 1, 1]], 1))
