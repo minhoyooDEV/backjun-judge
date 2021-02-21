@@ -25,3 +25,7 @@ for i in range(int(len(ss1) / 2)):
     print(ss1[i], ss1[-(i+1)])
     # if ss1[i] != ss1[-(i+1)]:
     #     print
+
+sss = 'FastCampus'
+res = sss[3:]
+print(res)
