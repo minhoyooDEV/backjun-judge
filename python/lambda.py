@@ -29,3 +29,7 @@ for i in range(int(len(ss1) / 2)):
 sss = 'FastCampus'
 res = sss[3:]
 print(res)
+aryt = [1,2,3,4,5,6,7,8,9]
+print(aryt[0], aryt[-1])
+print(aryt[1:])
+
