@@ -33,3 +33,21 @@ aryt = [1,2,3,4,5,6,7,8,9]
 print(aryt[0], aryt[-1])
 print(aryt[1:])
 
+
+def search_target(ary, target):
+    print(ary)
+    if len(ary) == 1 and target == ary[0]:
+        return True
+    if len(ary) == 1 and target != ary[0]:
+        return False
+    if len(ary) == 0:
+        return False
+    
+    mid = len(ary) //2
+    if target == ary[mid]:
+        return True
+    else:
+        if target > ary[mid]:
+            return search_target(ary[mid:], target)
+        else:
+            return search_target(ary[:mid], target)
