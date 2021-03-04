@@ -70,6 +70,9 @@ function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): Li
 //     return null; 
 // };
 
+
+// 끝나는 부근이 어짜피 같다면 교차되는 노드를 이어서 연속한다.
+// 천재적인것 같다.
 // function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
 //     if (headA === null || headB === null) {
 //         return null;
@@ -85,11 +88,9 @@ function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): Li
 //         if (pointerA === pointerB) {
 //             return pointerA;
 //         }
-        
 //         if (pointerA === null) {
 //             pointerA = headB;
 //         }
-        
 //         if (pointerB === null) {
 //             pointerB = headA;
 //         }
