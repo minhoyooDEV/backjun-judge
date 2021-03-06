@@ -16,6 +16,7 @@ def bfs(v, g, c):
     while q:
         v = q.popleft()
         if not c[v]:
+            
             c[v] = True
             print(v, end= ' ')
             for e in g[v]:
