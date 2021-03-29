@@ -7,6 +7,7 @@ def dfs(x, y):
     visited_x = [x]
     visited_y = [y]
     count += 1
+    min([1,2], key=lambda x: x)
     while data:
         # print(data)
         found = False
