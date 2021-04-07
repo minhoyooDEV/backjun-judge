@@ -16,12 +16,13 @@ def bfs(v, g, c):
     while q:
         v = q.popleft()
         if not c[v]:
-            
+
             c[v] = True
-            print(v, end= ' ')
+            print(v, end=' ')
             for e in g[v]:
                 if not c[e]:
                     q.append(e)
+
 
 n, m, v = map(int, input().split())
 adj = [[] for _ in range(n+1)]
@@ -38,3 +39,7 @@ for e in adj:
 dfs(v, adj, [False for _ in range(n + 1)])
 print()
 bfs(v, adj, [False for _ in range(n + 1)])
+
+
+
+
