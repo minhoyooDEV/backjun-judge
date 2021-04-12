@@ -12,7 +12,7 @@ def dfs(x, y):
             continue
         if array[nx][ny] and not visited[nx][ny]:
             dfs(nx, ny)
-
+a
 
 for _ in range(int(input())):
     m, n, k = map(int, input().split())

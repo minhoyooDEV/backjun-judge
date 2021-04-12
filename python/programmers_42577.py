@@ -32,3 +32,9 @@
 #               if pivot[:strlen] == phone_book[j][:strlen]:
 #                   return False
 #         return True
+
+
+
+print(min([1,2,3,4,5]))
+
+
