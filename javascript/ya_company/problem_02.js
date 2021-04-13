@@ -1,6 +1,5 @@
 function func(A = []) {
   const map = new Map();
-  let indices = [];
 
   let sum = 0;
   let subArraysCount = 0;
@@ -10,7 +9,7 @@ function func(A = []) {
     sum += n;
 
     if (sum == 0) subArraysCount++;
-    indices = [];
+    let indices = [];
 
     if (map.get(sum)) {
       subArraysCount += map.get(sum).length;
@@ -23,11 +22,13 @@ function func(A = []) {
       console.log(subArraysCount);
       return -1;
     }
+    console.log({ subArraysCount, n, sum, map });
   }
   return subArraysCount;
 }
 
 console.log(func([2, -2, 3, 0, 4, -7]));
-console.log(func(Array(100000).fill(0)));
-console.log(func(Array(4).fill(0)));
-console.log(func(Array(447110).fill(0)));
+console.log(func([2, -2, 0, 3, -3]));
+// console.log(func(Array(100000).fill(0)));
+// console.log(func(Array(4).fill(0)));
+// console.log(func(Array(447110).fill(0)));
