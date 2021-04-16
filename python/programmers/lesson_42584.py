@@ -1,25 +1,21 @@
 def solution(prices):
-    answer = [0] *  len(prices)
+    answer = []
 
-    stack = []
+    for i in range(0, len(prices) - 1):
+        count = 0
+        exp_price = prices[i]
+        for j in range(i + 1, len(prices)):
+            cmp_price = prices[j]
 
-    for i, price in enumerate(prices):
-      if len(stack) == 0 :
-        stack.append((price, i))
-      elif stack[-1][0] <= price:
-        stack.append((price, i))
-      else:
-        for j in range(i, -1, -1):
-          if stack[j -1][0] > price:
-              stack.pop()
-          else:
-            stack.append(price, i)
-            break
+            # print(exp_price, cmp_price, count)
+            if exp_price <= cmp_price:
+                count += 1
+            else:
+                count += 1
+                break
 
-      print(stack)
-      # for d in stack:
-      #   price, inx = d
-      #   answer[inx] += 1
+        answer.append(count)
+    answer.append(0)
 
     return answer
 
