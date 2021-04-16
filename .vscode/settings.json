@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/opt/homebrew/bin/python3",
+    "python.pythonPath": "/Users/volumeismac/.pyenv/shims/python",
     "jupyter.jupyterServerType": "local"
 }
