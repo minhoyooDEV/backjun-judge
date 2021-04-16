@@ -1,26 +1,3 @@
-// int con = 2, count = S.length()-1, sum = 0;
-// int oneCount = 0;
-// for(char ele:S.toCharArray()){
-//     int eleNumber = Character.getNumericValue(ele);
-//     sum+=eleNumber*Math.pow(con, count--);
-//     if(eleNumber==1) oneCount++;
-// }
-
-// if(oneCount>400000) return 799999;
-
-// int div = 2, cnt = 0;
-// while(sum>0){
-//     if(sum%div==0) {
-//         sum = sum/div;
-//         cnt++;
-//     }else{
-//         sum -= 1;
-//         cnt++;
-//     }
-// }
-
-// return cnt;
-
 function solution(S) {
   // write your code in JavaScript (Node.js 8.9.4)
 
@@ -47,9 +24,6 @@ function solution(S) {
   return cnt;
 }
 
-solution("011100");
-solution("111");
-solution("1111010101111");
-// "123456".split("").reduce((prev, v) => {
-//   console.log(v);
-// }, 0);
+console.log(solution("011100"));
+console.log(solution("111"));
+console.log(solution("1111010101111"));
