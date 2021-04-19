@@ -11,8 +11,6 @@ function solution(ranks) {
   for (const rank of ranks) {
     countMap.set(rank, (countMap.get(rank) || 0) + 1);
   }
-  // console.log(ranks);
-  // console.log(countMap);
 
   let sum = 0;
   countMap.forEach((_, soldierKey) => {
@@ -26,21 +24,8 @@ function solution(ranks) {
   return sum;
 }
 
-// console.log(solution([3, 4, 3, 0, 2, 2, 3, 0, 0]));
 
-//
-// int sum = 0;
-//         Arrays.sort(ranks);
 
-//         Map<Integer, Integer> count = new HashMap<>();
-//         for(Integer rank:ranks){
-//             count.put(rank, count.getOrDefault(rank, 0)+1);
-//         }
-
-//         for(Integer key:count.keySet()){
-//             Integer highKey = key+1;
-//             if(count.get(highKey)!=null){
-//                 sum+=count.get(key);
-//             }
-//         }
-//         return sum;
+console.time('t1')
+console.log(solution([0,5,0,2,4,3,2]), 4)
+console.timeEnd('t1')

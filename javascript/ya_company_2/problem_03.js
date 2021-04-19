@@ -1,33 +1,33 @@
 function solution(S, T) {
   // write your code in JavaScript (Node.js 8.9.4)
-  const sTimes = S.split(":").map(Number);
-  const tTimes = T.split(":").map(Number);
+  const sTimes = S.split(':').map(Number);
+  const tTimes = T.split(':').map(Number);
 
+  // before & after
   const sSecSum = sTimes[0] * 60 * 60 + sTimes[1] * 60 + sTimes[2];
-  const tSecSum = tTimes[0] * 60 * 60 + tTimes[1] * 60 + tTimes[2];
+  const tSecSum = tTimes.reduce((prev, t, i) => prev + t * Math.pow(60, tTimes.length - i - 1), 0);
 
   let [tempHH, tempMM, tempSS] = sTimes;
   let remainSec = tSecSum - sSecSum + 1;
   let count = 0;
 
-  // console.log({ remainSec });
-
   while (remainSec) {
     const set = new Set();
     [tempHH, tempMM, tempSS].forEach((t) => {
-      `${t}`
-        .padStart(2, "0")
-        .split("")
-        .forEach((s) => set.add(s));
+      // after
+      if (t < 10) {
+        set.add(0);
+        set.add(t);
+      } else {
+        set.add(parseInt(t / 10));
+        set.add(t % 10);
+      }
+      // before
+      // `${t}`
+      //   .padStart(2, '0')
+      //   .split('')
+      //   .forEach((s) => set.add(s));
     });
-
-    // console.log({ set, size: set.size });
-
-    // console.log({ count, size: set.size, set, result: set.size < 3 }, [
-    //   tempHH,
-    //   tempMM,
-    //   tempSS,
-    // ]);
 
     remainSec--;
 
@@ -49,11 +49,10 @@ function solution(S, T) {
       count += 1;
     }
   }
-  console.log({ count });
   return count;
 }
 
-solution("15:15:00", "15:15:12");
-solution("22:22:21", "22:22:23");
-// solution("22:21:34", "22:22:23");
-// solution("15:15:00", "15:16:12");
+console.log(solution('15:15:00', '15:15:12'), 1);
+console.log(solution('22:22:21', '22:22:23'), 3);
+console.log(solution('22:21:34', '22:22:23'), 8);
+console.log(solution('15:15:00', '15:16:12'), 4);
