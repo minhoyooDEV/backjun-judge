@@ -1,8 +1,9 @@
 from collections import deque
 
+
 def solution(name):
     length = len(name)
-    diffs = [float('inf')] * length
+    diffs = [0] * length
     answer = 0
     ordA = ord('A')
     ordZ = ord('Z')
@@ -18,32 +19,51 @@ def solution(name):
             diff = ordZ - ord(s) + 1
             ch = 'down'
 
-        print(diff, ch)
+        # print(diff, ch)
         diffs[i] = diff
         answer += diff
 
-    # print(diffs)
-    namesq = deque(names[length//2:] + names[:length//2])
+    namesq = deque(names)
+    print(namesq)
+    print()
     q_mid = length//2
-    # while True:
-    #     print(names)
+    for _ in range(q_mid):
+        namesq.appendleft(namesq.pop())
+
+    # print(namesq)
+    # print()
     moveCount = 0
     while True:
         namesq[q_mid] = 'A'
-
+        move = 0
+        # print(namesq)
         for i in range(1, q_mid + 1):
-            if namesq[q_mid + i]:
-                pass
-            elif namesq[q_mid - i ]:
-                pass
+            if namesq[q_mid - i] != 'A':
+                for j in range(i):
+                    namesq.appendleft(namesq.pop())
+                move += i
+                break
+            if len(namesq) > (q_mid + i) and namesq[q_mid + i] != 'A':
+                for j in range(i):
+                    namesq.append(namesq.popleft())
+                move += i
+                break
+        if not move:
+            break
+
+        moveCount += move
+    print(sum(diffs), moveCount)
+    return sum(diffs) + moveCount
 
 
-    print(namesq, q_mid)
-    # print(names[:len(names) //2])
-    # print(names[len(names) //2:])
-    return answer
-
-print(solution('JAEAAANW'))
+print(solution('JEROEN'), 56)
+print(solution('JAN'), 23)
+print(solution('BBABA'), 6)
+print(solution('BBBAAB'), 8)
+print(solution('BBAABAA'), 7)
+print(solution('BBAABBB'), 10)
+print(solution('BBAABAAAA'), 7)
+print(solution('BBAABAAAAB'), 10)
 # a b c d e f g h i j k l m
 # n o p q r s t u v w x y z
 # [0, 4, 0, 0, 0, 13, 9, 0, 4, 0, 0, 0, 13]
