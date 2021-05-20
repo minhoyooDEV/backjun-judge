@@ -37,4 +37,5 @@ for _ in range(test_case):
           target = target[:cursur] + [ch] + target[cursur:]
           result = ''.join(target)
 
-  print(result)
+
+# 두 테이블 T1, T2가 행렬 (r1, c1), (r2, c2)에 각각 위치하고 있다면, T1, T2 사이의 맨해튼 거리는 |r1 - r2| + |c1 - c2| 입니다. ↩

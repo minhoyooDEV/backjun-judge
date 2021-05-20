@@ -25,21 +25,22 @@ def solution(weights, head2head):
 
     heavyWeightSort = sorted(heavyWeightdict.items(),
                              key=lambda x: x[1], reverse=True)
-    print('heavyWeightWinCnt', heavyWeightWinCnt)
-    print('weightidx', weightidx)
-    print('heavyWeightdict', heavyWeightdict)
-    print('heavyWeightSort', heavyWeightSort)
+    # print('heavyWeightWinCnt', heavyWeightWinCnt)
+    # print('weightidx', weightidx)
+    # print('heavyWeightdict', heavyWeightdict)
+    # print('heavyWeightSort', heavyWeightSort)
 
     heavyWeightidx = [i[0] for i in heavyWeightSort]
-    print('heavyWeightidx', heavyWeightidx)
+    # print('heavyWeightidx', heavyWeightidx)
 
     winCntdict = {i: winCnt[i] for i in heavyWeightidx}
-    print('winCntdict', winCntdict)
+    # print('winCntdict', winCntdict)
+
     winCntSort = sorted(winCntdict.items(), key=lambda x: x[1], reverse=True)
-    print('winCntSort', winCntSort)
-#
+    # print('winCntSort', winCntSort)
+
     winCntidx = [i[0] for i in winCntSort]
-    print('winCntidx', winCntidx)
+    # print('winCntidx', winCntidx)
 
     return list(map(lambda x: x+1, winCntidx))
 
